@@ -1,4 +1,4 @@
-<g-emoji class="g-emoji" alias="baseball" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/90be.png">⚾</g-emoji>
+<g-emoji class="g-emoji" alias="baseball" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1200be.png">⚾</g-emoji>
 # Create Breakout Game using Python
 ## step by step
 
