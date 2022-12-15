@@ -47,7 +47,7 @@ Getting really good at programming is anything but easy. However, with a growth 
 To improve at most skills, you have to put in the reps. If you’re not coding regularly—say, each day or every other day—you won’t improve very fast.
 Learning programming has some elements in common with learning a musical instrument and others in common with writing prose. Getting good at programming takes dedication, perseverance, and repetition. Sometimes, you have to work on the same skill again and again to make it muscle memory. Studying the work of great programmers, like playing the work of great composers or reading the work of great authors, is also useful.
 Overall, programming is no different from learning any other skill. You must write a lot of code frequently, but you must also explore and understand the work of others.
-# these 10 tips are combination of the experience of programmers and sites
+/these 10 tips are combination of the experience of programmers and sites/
 # these sites you can communicate with other programmers(general)
 https://stackoverflow.com/ 
 https://github.com/
