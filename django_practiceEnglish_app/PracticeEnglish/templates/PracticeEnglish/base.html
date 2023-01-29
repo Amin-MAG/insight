@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body {
+  
+  font-size: 28px;
+  position: absolute
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+  position: -webkit-sticky; /* Safari */
+  position: sticky;
+  top: 0;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: #111;
+}
+
+.active {
+  background-color: #4CAF50;
+}
+</style>
+</head>
+<body>
+
+<!-- <div class="header">
+  <h2>Scroll Down</h2>
+  <p>Scroll down to see the sticky effect.</p>
+</div> -->
+
+<ul>
+  <li><a style="width:500px;" class="active" href="{% url 'welcome' %}">Home</a></li>
+  <li><a href="#Favourite">Favourite</a></li>
+  <!-- <li><a href="#contact">Contact</a></li> -->
+  <li><a href="#login">Login</a></li>
+  <li><a href="#register">Register</a></li>
+  <!-- <input style="height:70px; width: 300px; border-radius: 10px; font-size: 25px; font-style: oblique;" type="text" placeholder="              Search...">
+  <button type="button" class="btn btn-success" style="background-color: #4CAF50; height:70px; width: 150px; border-radius: 10px; font-size: 20px; font-style: oblique; color: white" href="#contact">Search</button>
+  --> </ul>
+
+
+{% if messages %}
+  {% for message  in messages %}
+    <div class="alert alert-{{message.tags}}">
+      {{message}}
+    </div>
+  {% endfor %}
+{% endif %}
+{% block content %}
+{% endblock content %}
+</body>
+</html>

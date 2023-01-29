@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+#myInput {
+  background-image: url('/css/searchicon.png');
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+  width: 100%;
+  font-size: 16px;
+  padding: 12px 20px 12px 40px;
+  border: 1px solid #23c186;
+  margin-bottom: 12px;
+}
+
+#myTable {
+  border-collapse: collapse;
+  width: 100%;
+  border: 1px solid #23c186;
+  font-size: 18px;
+}
+
+#myTable th, #myTable td {
+  text-align: left;
+  padding: 12px;
+}
+
+#myTable tr {
+  border-bottom: 1px solid #23c186;
+}
+
+#myTable tr.header, #myTable tr:hover {
+  background-color: #23c186;
+}
+
+.fa {
+  font-size: 50px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.fa:hover {
+  color: darkblue;
+}
+body {
+  padding: 25px;
+  background-color: white;
+  color: black;
+  font-size: 25px;
+}
+
+.dark-mode {
+  background-color: black;
+  color: white;
+}
+</style>
+</head>
+<body>
+
+<h2 style="width:40%; font-family:verdana">Phrase with afraid</h2>
+
+<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names.." title="Type in a name">
+
+<table id="myTable">
+  <tr class="header">
+    <th style="width:60%; font-family:verdana">Phrase</th>
+    <th style="width:40%; font-family:verdana">Meaning</th>
+  </tr>
+  <tbody>
+
+        
+    
+    {% for phrase_afraid in phrases_afraid %}
+    <th scope="row"></th>
+    <tr>
+    <td>
+        {{ phrase_afraid.phrase }}
+    </td>
+    <td>
+        {{ phrase_afraid.meaning }}
+    </td>
+    </tr>
+    <!-- <td>
+        {{ verb.example }}
+    </td> -->
+    {% endfor %}
+
+    <button onclick="myFunction2()" style="width:130px; height: 45px; margin-bottom: 10px; margin-left: 8px;margin-top: 15px; border-radius: 8px; font-size: 15px; border-color: white;"><div id="myDIV">Dark Mode</div></button>
+
+ </tbody>
+</table>
+
+<script>
+function myFunction() {
+  var input, filter, table, tr, td, i, txtValue;
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("myTable");
+  tr = table.getElementsByTagName("tr");
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[0];
+    if (td) {
+      txtValue = td.textContent || td.innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }       
+  }
+}
+function myFunction2() {
+  var element = document.body;
+  element.classList.toggle("dark-mode");
+  var x = document.getElementById("myDIV");
+  if (x.innerHTML === "Dark Mode") {
+    x.innerHTML = "Light Mode";
+  } else {
+    x.innerHTML = "Dark Mode";
+  }
+}
+</script>
+<form action="/phrases_afraid" method="post">{% csrf_token %} 
+  <input type="text" name="phrase" id="phrase" placeholder="  Phrase..." style="width:130px; height: 45px; margin-bottom: 10px; margin-left: 8px;margin-top: 15px; border-radius: 8px; font-size: 15px; border-color: white;">
+  <input type="text" name="meaning" id="meaning" placeholder="  Meaning..." style="width:130px; height: 45px; margin-bottom: 10px; margin-left: 8px;margin-top: 15px; border-radius: 8px; font-size: 15px; border-color: white; " >
+  <input type="submit"style="width:130px; height: 45px; margin-bottom: 10px; margin-left: 8px; margin-top: 15px; background-color: #23c186; border-radius: 8px; font-size: 15px; border-color: white;">
+ </form>  
+</body>
+</html>

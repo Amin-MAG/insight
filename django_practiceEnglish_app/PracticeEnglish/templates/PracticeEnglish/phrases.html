@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Phrase</th>
+                <th scope="col">Meaning</th>
+                <th scope="col">Example</th>
+            </tr>
+        </thead>
+    <tbody>
+        {% for phrase in phrases %}
+        <tr>
+            <td>
+                {{ phrase.phrase }}
+            </td>
+            <td>
+                {{ phrase.meaning }}
+            </td>
+            <td>
+                {{ phrase.example }}
+            </td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    
+</body>
+</html>

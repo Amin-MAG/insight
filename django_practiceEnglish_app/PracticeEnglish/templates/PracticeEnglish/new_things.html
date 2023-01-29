@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Don't say</th>
+                <th scope="col">Meaning</th>
+                <th scope="col">say these instead!</th>
+            </tr>
+        </thead>
+    <tbody>
+        {% for new in news %}
+        <tr>
+            <td>
+                {{ new.new }}
+            </td>
+            <td>
+                {{ new.meaning }}
+            </td>
+            <td>
+                {{ new.instead }}
+            </td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    
+</body>
+</html>

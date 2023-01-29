@@ -1,0 +1,86 @@
+<html>
+    <head>
+        <style>
+            body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: #0f0f0f;
+}
+a {
+  text-decoration: none;
+  border: 3px solid #e91e63;
+  color: transparent;
+  padding: 40px 80px;
+  font-size: 28px;
+  font-family: sans-serif;
+  letter-spacing: 5px;
+  transition: all 0.5s;
+  position: relative;
+}
+a:before {
+  content: "";
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #0f0f0f67;
+  background: #0f0f0f7b;
+  font-size: 28px;
+  top: 0;
+  left: 100%;
+  font-family: sans-serif;
+  letter-spacing: 5px;
+  transition: all 1s;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  transform: scale(0) rotatey(0);
+  opacity: 0;
+}
+a:hover:before {
+  transform: scale(1) rotatey(360deg);
+  left: 0;
+  opacity: 1;
+}
+a:after {
+  content: "";
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #0f0f0f73;
+  background: #0f0f0f61;
+  font-size: 28px;
+  top: 0;
+  left: 0;
+  font-family: sans-serif;
+  letter-spacing: 5px;
+  transition: all 1s;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  transform: scale(1) rotatey(0);
+  opacity: 1;
+}
+a:hover:after {
+  transform: scale(0) rotatey(360deg);
+  left: -100%;
+  opacity: 0;
+}
+div.a {
+  position: absolute;
+  top: 120px;
+  color:#e91e63
+} 
+
+        </style>
+    </head>
+    <body>
+        <div class="a"><h1>Stop saying ...</h1></div>
+        <a href="{% url 'new_things_me_too' %}" style="color:#e91e63";>Me too</a>
+        <p style="color:#050801";>paragraph</p>
+        <a href="{% url 'new_things_ithink' %}" style="color:#e91e63";>I think</a>
+        <p style="color:#050801";>paragraph</p>
+        <a href="{% url 'new_things_very' %}" style="color:#e91e63";>Very</a>
+    </body>
+</html>
